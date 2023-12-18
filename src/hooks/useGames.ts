@@ -40,7 +40,7 @@ const useGames = () => {
 				if (error instanceof CanceledError) return;
 				setError(error.message);
 			} finally {
-				setIsLoading(true);
+				setIsLoading(false);
 			}
 		};
 
