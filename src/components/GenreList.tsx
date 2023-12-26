@@ -1,8 +1,12 @@
 import { ScaleLoader } from 'react-spinners';
-import useGenres from '../hooks/useGenres';
+import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
 
-const GenreList = () => {
+interface Props {
+	onSelectedGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectedGenre }: Props) => {
 	const { data, isLoading, error } = useGenres();
 
 	if (error) return null;
@@ -17,7 +21,7 @@ const GenreList = () => {
 						src={getCroppedImageUrl(genre.image_background)}
 						alt={genre.image_background}
 					/>
-					<p>{genre.name}</p>
+					<button onClick={() => onSelectedGenre(genre)}>{genre.name}</button>
 				</li>
 			))}
 		</ul>
