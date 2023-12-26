@@ -12,7 +12,10 @@ function App() {
 		<>
 			<NavBar />
 			<div style={{ display: 'flex' }}>
-				<GenreList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
+				<GenreList
+					onSelectedGenre={(genre) => setSelectedGenre(genre)}
+					selectedGenre={selectedGenre}
+				/>
 				<GamesGrid selectedGenre={selectedGenre} />
 			</div>
 		</>
