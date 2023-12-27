@@ -8,7 +8,7 @@ import {
 	FaAndroid,
 } from 'react-icons/fa';
 import { MdPhoneIphone } from 'react-icons/md';
-import { SiNintendo, SiSega } from 'react-icons/si';
+import { SiNintendo, SiSega, SiAtari } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 import React from 'react';
 import { IconType } from 'react-icons';
@@ -29,6 +29,7 @@ const PlatformIconList = ({ platforms }: Props) => {
 		ios: MdPhoneIphone,
 		web: BsGlobe,
 		sega: SiSega,
+		atari: SiAtari,
 	};
 
 	return (
