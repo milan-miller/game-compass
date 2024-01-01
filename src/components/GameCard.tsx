@@ -11,14 +11,13 @@ const GameCard = ({ game }: Props) => {
 	return (
 		<div>
 			<img src={getCroppedImageUrl(game.background_image)} alt={game.name} />
-			<h2>{game.name}</h2>
 			{game.parent_platforms && (
 				<PlatformIconList
 					platforms={game.parent_platforms.map((p) => p.platform)}
 				/>
 			)}
-
 			<CriticScore score={game.metacritic} />
+			<h2>{game.name}</h2>
 		</div>
 	);
 };
