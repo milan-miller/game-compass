@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-const SearchInput = () => {
-	const [searchInput, setSearchInput] = useState('');
+interface Props {
+	onSearch: (searchText: string) => void;
+}
+
+const SearchInput = ({ onSearch }: Props) => {
+	const ref = useRef<HTMLInputElement>(null);
 
 	return (
-		<div style={{ position: 'relative', display: 'inline-block' }}>
+		<form
+			onSubmit={(event) => {
+				event.preventDefault();
+				if (ref.current) onSearch(ref.current.value);
+			}}
+			style={{ position: 'relative', display: 'inline-block' }}
+		>
 			<BsSearch
 				style={{
 					position: 'absolute',
@@ -19,12 +29,11 @@ const SearchInput = () => {
 			/>
 			<input
 				type='text'
-				value={searchInput}
+				ref={ref}
 				placeholder='Search games...'
-				onChange={(e) => setSearchInput(e.target.value)}
 				style={{ paddingLeft: '15px' }}
 			/>
-		</div>
+		</form>
 	);
 };
 
