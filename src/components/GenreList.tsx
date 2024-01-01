@@ -14,25 +14,28 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
 	if (isLoading) return <ScaleLoader color='grey' height={20} width={2} />;
 
 	return (
-		<ul>
-			{data.map((genre) => (
-				<li key={genre.id}>
-					<img
-						style={{ width: '40px', height: '40px', borderRadius: '5px' }}
-						src={getCroppedImageUrl(genre.image_background)}
-						alt={genre.image_background}
-					/>
-					<button
-						style={{
-							fontWeight: selectedGenre?.id === genre.id ? 'bold' : 'normal',
-						}}
-						onClick={() => onSelectedGenre(genre)}
-					>
-						{genre.name}
-					</button>
-				</li>
-			))}
-		</ul>
+		<div>
+			<h2>Genres</h2>
+			<ul>
+				{data.map((genre) => (
+					<li key={genre.id}>
+						<img
+							style={{ width: '40px', height: '40px', borderRadius: '5px' }}
+							src={getCroppedImageUrl(genre.image_background)}
+							alt={genre.image_background}
+						/>
+						<button
+							style={{
+								fontWeight: selectedGenre?.id === genre.id ? 'bold' : 'normal',
+							}}
+							onClick={() => onSelectedGenre(genre)}
+						>
+							{genre.name}
+						</button>
+					</li>
+				))}
+			</ul>
+		</div>
 	);
 };
 
