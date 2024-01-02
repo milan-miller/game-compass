@@ -13,24 +13,23 @@ const GamesGrid = ({ gameQuery }: Props) => {
 	console.log(isLoading);
 	const skeletons = [1, 2, 3, 4, 5, 6];
 
+	if (error) return <p>{error}</p>;
+
 	return (
-		<>
-			{error && <p>{error}</p>}
-			<ul>
-				{isLoading &&
-					skeletons.map((skeleton) => (
-						<GameCardContainer key={skeleton}>
-							<GameCardSkeleton />
-						</GameCardContainer>
-					))}
-				{!isLoading &&
-					data.map((game) => (
-						<GameCardContainer key={game.id}>
-							<GameCard game={game} />
-						</GameCardContainer>
-					))}
-			</ul>
-		</>
+		<ul>
+			{isLoading &&
+				skeletons.map((skeleton) => (
+					<GameCardContainer key={skeleton}>
+						<GameCardSkeleton />
+					</GameCardContainer>
+				))}
+			{!isLoading &&
+				data.map((game) => (
+					<GameCardContainer key={game.id}>
+						<GameCard game={game} />
+					</GameCardContainer>
+				))}
+		</ul>
 	);
 };
 export default GamesGrid;
