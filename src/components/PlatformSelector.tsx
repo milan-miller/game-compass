@@ -10,8 +10,6 @@ interface Props {
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 	const { data, error } = usePlatforms();
 
-	console.log(data);
-
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleDropdown = () => {
