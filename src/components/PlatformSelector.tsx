@@ -25,7 +25,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 			</button>
 			{isOpen && data && (
 				<div className='dropdown-content'>
-					{data.map((platform) =>
+					{data?.results.map((platform) =>
 						platform !== selectedPlatform ? (
 							<p
 								key={platform.id}
