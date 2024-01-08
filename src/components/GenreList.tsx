@@ -17,7 +17,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
 		<div>
 			<h2>Genres</h2>
 			<ul>
-				{data.map((genre) => (
+				{data?.results.map((genre) => (
 					<li key={genre.id}>
 						<img
 							style={{ width: '40px', height: '40px', borderRadius: '5px' }}
