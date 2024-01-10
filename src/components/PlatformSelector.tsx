@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import usePlatforms, { Platform } from '../hooks/usePlatforms';
+import usePlatform from '../hooks/usePlatform';
 
 interface Props {
 	onSelectPlatform: (platform: Platform) => void;
@@ -8,9 +9,7 @@ interface Props {
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
 	const { data, error } = usePlatforms();
-	const selectedPlatform = data?.results.find(
-		(platform) => platform.id === selectedPlatformId
-	);
+	const selectedPlatform = usePlatform(selectedPlatformId);
 
 	const [isOpen, setIsOpen] = useState(false);
 
