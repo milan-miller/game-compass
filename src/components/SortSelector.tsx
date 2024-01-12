@@ -1,8 +1,6 @@
-interface Props {
-	onSelectSortOrder: (sortOrder: string) => void;
-}
+import useGameQueryStore from '../store';
 
-const SortSelector = ({ onSelectSortOrder }: Props) => {
+const SortSelector = () => {
 	const sortOrders = [
 		{ value: '', label: 'Relevance' },
 		{ value: '-added', label: 'Date added' },
@@ -12,13 +10,12 @@ const SortSelector = ({ onSelectSortOrder }: Props) => {
 		{ value: '-rating', label: 'Average rating' },
 	];
 
+	const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+
 	return (
 		<div className='dropdown'>
-			<label htmlFor='sortOrder'>Order by:</label>
-			<select
-				id='sortOrder'
-				onChange={(e) => onSelectSortOrder(e.target.value)}
-			>
+			<label htmlFor='sortOrder'>Order by: </label>
+			<select id='sortOrder' onChange={(e) => setSortOrder(e.target.value)}>
 				{sortOrders.map((order) => (
 					<option key={order.value} value={order.value}>
 						{order.label}

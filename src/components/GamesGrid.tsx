@@ -1,5 +1,4 @@
 import React from 'react';
-import { GameQuery } from '../App';
 import useGames from '../hooks/useGames';
 import GameCard from './GameCard';
 import GameCardContainer from './GameCardContainer';
@@ -7,13 +6,8 @@ import GameCardSkeleton from './GameCardSkeleton';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { PacmanLoader } from 'react-spinners';
 
-interface Props {
-	gameQuery: GameQuery;
-}
-
-const GamesGrid = ({ gameQuery }: Props) => {
-	const { data, error, isLoading, fetchNextPage, hasNextPage } =
-		useGames(gameQuery);
+const GamesGrid = () => {
+	const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
 
 	const skeletons = [1, 2, 3, 4, 5, 6];
 
