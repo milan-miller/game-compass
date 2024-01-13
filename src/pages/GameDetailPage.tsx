@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import useGame from '../hooks/useGame';
 import { RingLoader } from 'react-spinners';
+import ExpandableText from '../components/ExpandableText';
 
 const GameDetailPage = () => {
 	const { slug } = useParams();
@@ -13,7 +14,7 @@ const GameDetailPage = () => {
 	return (
 		<>
 			<h1>{game.name}</h1>
-			<p>{game.description_raw}</p>
+			<ExpandableText>{game.description_raw}</ExpandableText>
 		</>
 	);
 };
