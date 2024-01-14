@@ -3,6 +3,7 @@ import useGame from '../hooks/useGame';
 import { RingLoader } from 'react-spinners';
 import ExpandableText from '../components/ExpandableText';
 import GameAttributes from '../components/GameAttributes';
+import GameTrailer from '../components/GameTrailer';
 
 const GameDetailPage = () => {
 	const { slug } = useParams();
@@ -17,6 +18,7 @@ const GameDetailPage = () => {
 			<h1>{game.name}</h1>
 			<ExpandableText>{game.description_raw}</ExpandableText>
 			<GameAttributes game={game} />
+			<GameTrailer gameId={game.id} />
 		</>
 	);
 };
