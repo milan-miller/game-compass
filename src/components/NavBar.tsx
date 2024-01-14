@@ -1,11 +1,14 @@
 import { LiaGamepadSolid } from 'react-icons/lia';
 import SearchInput from './SearchInput';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 	return (
 		<nav>
-			<LiaGamepadSolid />
-			<p>GameCompass</p>
+			<Link to='/'>
+				<LiaGamepadSolid />
+				<p>GameCompass</p>
+			</Link>
 			<SearchInput />
 		</nav>
 	);
