@@ -5,7 +5,7 @@ const NavBar = () => {
 	return (
 		<nav>
 			<LiaGamepadSolid />
-			<p>GameHub</p>
+			<p>GameCompass</p>
 			<SearchInput />
 		</nav>
 	);
