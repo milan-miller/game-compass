@@ -11,6 +11,7 @@ import { MdPhoneIphone } from 'react-icons/md';
 import { SiNintendo, SiSega, SiAtari } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 import React from 'react';
+import { TbExclamationMark } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 
 interface Props {
@@ -30,14 +31,15 @@ const PlatformIconList = ({ platforms }: Props) => {
 		web: BsGlobe,
 		sega: SiSega,
 		atari: SiAtari,
+		'commodore-amiga': TbExclamationMark,
+		'3do': TbExclamationMark,
+		'neo-geo': TbExclamationMark,
 	};
 
 	return (
 		<>
-			{platforms.map(
-				(platform) =>
-					platform.slug !== 'neo-geo' &&
-					React.createElement(iconMap[platform.slug], { key: platform.id })
+			{platforms.map((platform) =>
+				React.createElement(iconMap[platform.slug], { key: platform.id })
 			)}
 		</>
 	);
