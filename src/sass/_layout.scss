@@ -23,15 +23,15 @@
 	font-size: 2rem;
 	flex-direction: column;
 	align-items: center;
-	width: 40%;
+	width: 100%;
 	color: var(--color-grey-1);
+	justify-content: center;
 }
 
 .selectors-layout {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-content: center;
-	width: 80%;
 }
 
 .details-layout {
@@ -40,4 +40,10 @@
 	align-items: center;
 	margin-top: 2rem;
 	font-size: 2rem;
+	width: 80%;
+	margin: 0 auto;
+
+	h2 {
+		margin-top: 2rem;
+	}
 }
