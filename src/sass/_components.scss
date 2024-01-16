@@ -94,15 +94,16 @@
 	flex: 0 0 33.33%;
 }
 
-// GameCard
-.gamecard {
+// GameCard & GameCardSkeleton
+.gamecard,
+.gamecard-skeleton {
 	background: var(--color-grey-2);
 	display: flex;
 	flex-direction: column;
 	margin: 1rem;
 	border-radius: 10px 10px 0px 0px;
 	overflow: hidden;
-	width: 65%;
+	width: 30rem;
 	transition: 0.3s ease-in;
 	min-height: 40rem;
 

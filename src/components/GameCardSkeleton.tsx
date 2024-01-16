@@ -1,6 +1,6 @@
 const GameCardSkeleton = () => {
 	return (
-		<div className='game-card-skeleton'>
+		<div className='gamecard-skeleton'>
 			<div className='skeleton-img'></div>
 			<div className='skeleton-title'></div>
 			<div className='skeleton-platforms'></div>
