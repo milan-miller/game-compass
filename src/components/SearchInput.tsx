@@ -1,12 +1,14 @@
 import { useRef } from 'react';
-import { BsSearch } from 'react-icons/bs';
 import useGameQueryStore from '../store';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import SearchIcon from './SearchIcon';
 
 const SearchInput = () => {
 	const ref = useRef<HTMLInputElement>(null);
 	const setSearchText = useGameQueryStore((s) => s.setSearchText);
+	const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	return (
 		<form
@@ -14,28 +16,22 @@ const SearchInput = () => {
 				event.preventDefault();
 				if (ref.current) {
 					setSearchText(ref.current.value);
-					navigate('/');
+
+					if (location.pathname !== '/') {
+						setSelectedPlatformId(undefined);
+						navigate('/');
+					}
 				}
 			}}
-			style={{ position: 'relative', display: 'inline-block' }}
+			className='search-input'
 		>
-			<BsSearch
-				style={{
-					position: 'absolute',
-					top: '50%',
-					transform: 'translateY(-50%)',
-					left: '3px',
-					zIndex: 1,
-					color: 'grey',
-					width: '13px',
-				}}
-			/>
 			<input
 				type='text'
+				placeholder='Search games'
 				ref={ref}
-				placeholder='Search games...'
-				style={{ paddingLeft: '15px' }}
+				className='search-input__input'
 			/>
+			<SearchIcon className='search-input__search-icon' />
 		</form>
 	);
 };
