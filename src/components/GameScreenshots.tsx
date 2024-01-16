@@ -12,11 +12,17 @@ const GameScreenshots = ({ gameId }: Props) => {
 	if (error) throw error;
 
 	return (
-		<div>
+		<div className='game-screenshots'>
 			{data?.results.map((file) => (
-				<img key={file.id} src={file.image} alt={`${file.image}`} />
+				<img
+					key={file.id}
+					src={file.image}
+					alt={`${file.image}`}
+					className='game-screenshots__image'
+				/>
 			))}
 		</div>
 	);
 };
+
 export default GameScreenshots;

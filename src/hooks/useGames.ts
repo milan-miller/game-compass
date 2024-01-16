@@ -8,6 +8,10 @@ const apiClient = new APIClient<Game>('/games');
 const useGames = () => {
 	const gameQuery = useGameQueryStore((s) => s.gameQuery);
 
+	if (isNaN(gameQuery.platformId as number)) {
+		gameQuery.platformId = undefined;
+	}
+
 	return useInfiniteQuery<FetchResponse<Game>, Error>({
 		queryKey: ['games', gameQuery],
 		queryFn: ({ pageParam = 1 }) =>

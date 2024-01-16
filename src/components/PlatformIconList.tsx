@@ -39,7 +39,10 @@ const PlatformIconList = ({ platforms }: Props) => {
 	return (
 		<>
 			{platforms.map((platform) =>
-				React.createElement(iconMap[platform.slug], { key: platform.id })
+				React.createElement(iconMap[platform.slug], {
+					key: platform.id,
+					className: 'gamecard__info-icon',
+				})
 			)}
 		</>
 	);

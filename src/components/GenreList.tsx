@@ -12,13 +12,12 @@ const GenreList = () => {
 	if (isLoading) return <ScaleLoader color='grey' height={20} width={2} />;
 
 	return (
-		<div>
-			<h2>Genres</h2>
+		<div className='genres-layout'>
+			<h2>GENRES</h2>
 			<ul>
 				{data?.results.map((genre) => (
-					<li key={genre.id}>
+					<li key={genre.id} className='genres__list'>
 						<img
-							style={{ width: '40px', height: '40px', borderRadius: '5px' }}
 							src={getCroppedImageUrl(genre.image_background)}
 							alt={genre.image_background}
 						/>
@@ -28,7 +27,7 @@ const GenreList = () => {
 							}}
 							onClick={() => setSelectedGenreId(genre.id)}
 						>
-							{genre.name}
+							{genre.name.toUpperCase()}
 						</button>
 					</li>
 				))}

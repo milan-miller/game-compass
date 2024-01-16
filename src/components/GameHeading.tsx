@@ -11,6 +11,6 @@ const GameHeading = () => {
 
 	const heading = `${platform?.name || ''}  ${genre?.name || ''} Games`;
 
-	return <h1>{heading}</h1>;
+	return <h2>SHOWING: {heading}</h2>;
 };
 export default GameHeading;

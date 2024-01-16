@@ -1,0 +1,228 @@
+// Navbar
+.navbar {
+	background-color: var(--color-primary);
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+
+	&__brand {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		height: 6rem;
+		width: 6.5rem;
+	}
+
+	&__logo-text {
+		height: 3rem;
+		width: 18rem;
+		margin-left: 12px;
+	}
+
+	&__search {
+		margin: 0 auto;
+	}
+}
+
+// SearchInput
+.search-input {
+	margin: 0 auto;
+	width: 40vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__input {
+		padding: 1rem;
+		border-radius: 50px;
+		border: none;
+		width: 90%;
+		margin-right: -2.5rem;
+		transition: all ease-in 0.2s;
+		font-size: 1.5rem;
+		background-color: var(--color-grey-1);
+
+		&:focus {
+			width: 100%;
+			outline: none;
+		}
+
+		&::-webkit-input-placeholder {
+			color: var(--color-grey-2);
+		}
+	}
+
+	&__search-icon {
+		fill: var(--color-grey-2);
+	}
+}
+
+// Genres
+.genres__list {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+
+	button {
+		background: none;
+		border: none;
+		padding: 0;
+		height: 1rem;
+		font-family: inherit;
+		cursor: pointer;
+		margin-left: 1rem;
+		color: inherit;
+		font-size: 1.9rem;
+		letter-spacing: inherit;
+	}
+}
+
+// GamesGrid
+.games-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+// GameCardContainer
+.gamecard-container {
+	display: flex;
+	justify-content: center;
+	flex: 0 0 33.33%;
+}
+
+// GameCard
+.gamecard {
+	background: var(--color-grey-2);
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+	border-radius: 10px 10px 0px 0px;
+	overflow: hidden;
+	width: 65%;
+	transition: 0.3s ease-in;
+	min-height: 40rem;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+
+	img {
+		width: 100%;
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+
+		&-icon {
+			font-size: 2rem;
+			margin: 2px;
+		}
+	}
+
+	&__title {
+		color: var(--color-grey-1);
+		text-decoration: none;
+		text-align: center;
+		font-size: 1.5rem;
+		padding: 1rem;
+		margin-top: 2rem;
+	}
+}
+
+// CriticScore
+.critic-score {
+	padding: 0.8rem;
+	font-size: 1.8rem;
+	border-radius: 10px;
+}
+
+// SortSelector
+.sort-selector,
+.platform-selector {
+	display: flex;
+
+	select {
+		margin-left: 5px;
+		background: var(--color-black);
+		color: inherit;
+	}
+}
+
+// ExpandableText
+.expandable-text {
+	padding: 5rem;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button {
+		padding: 0;
+		height: 0;
+		font-weight: bold;
+		background: none;
+		border: none;
+		color: var(--color-grey-1);
+		cursor: pointer;
+		color: var(--color-primary);
+		margin-left: 5px;
+	}
+
+	img {
+		width: 90%;
+	}
+}
+
+// GameScreenShots
+.game-screenshots {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__image {
+		width: 80%;
+	}
+}
+
+// GameTrailer
+.game-trailer {
+	width: 80%;
+}
+
+// GameAttributes
+.game-attributes {
+	width: 20%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+
+	dt {
+		color: var(--color-primary);
+	}
+
+	&__left-side,
+	&__right-side {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+// DefinitionItem
+.definition-item {
+	margin: 1rem;
+
+	&-score {
+		display: flex;
+
+		> dd {
+			margin-left: 10px;
+		}
+	}
+}

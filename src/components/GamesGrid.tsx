@@ -25,7 +25,7 @@ const GamesGrid = () => {
 				loader={<PacmanLoader />}
 				style={{ overflow: 'hidden' }}
 			>
-				<ul>
+				<ul className='games-grid'>
 					{isLoading &&
 						skeletons.map((skeleton) => (
 							<GameCardContainer key={skeleton}>

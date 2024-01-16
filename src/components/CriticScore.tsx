@@ -3,8 +3,18 @@ interface Props {
 }
 
 const CriticScore = ({ score }: Props) => {
-	const color = score > 75 ? 'green' : score > 50 ? 'yellow' : 'red';
+	const color = score > 75 ? 'green' : score > 50 ? '#FFBF00' : 'red';
 
-	return <div style={{ background: color, display: 'inline' }}>{score}</div>;
+	if (!score) return null;
+
+	return (
+		<div
+			className='critic-score'
+			style={{ background: color, display: 'inline' }}
+		>
+			{score}
+		</div>
+	);
 };
+
 export default CriticScore;

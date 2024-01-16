@@ -8,12 +8,16 @@ const HomePage = () => {
 	return (
 		<div style={{ display: 'flex' }}>
 			<GenreList />
-			<div>
-				<GameHeading />
-				<PlatformSelector />
-				<SortSelector />
+			<div className='main-layout'>
+				<div className='selections-layout'>
+					<GameHeading />
+					<div className='selectors-layout'>
+						<PlatformSelector />
+						<SortSelector />
+					</div>
+				</div>
+				<GamesGrid />
 			</div>
-			<GamesGrid />
 		</div>
 	);
 };

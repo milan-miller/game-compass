@@ -13,7 +13,7 @@ const SortSelector = () => {
 	const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
 
 	return (
-		<div className='dropdown'>
+		<div className='sort-selector'>
 			<label htmlFor='sortOrder'>Order by: </label>
 			<select id='sortOrder' onChange={(e) => setSortOrder(e.target.value)}>
 				{sortOrders.map((order) => (
