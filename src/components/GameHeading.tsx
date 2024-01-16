@@ -9,7 +9,7 @@ const GameHeading = () => {
 	const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
 	const platform = usePlatform(platformId);
 
-	const heading = `${platform?.name || ''}  ${genre?.name || ''} Games`;
+	const heading = `${platform?.name || 'ALL'}  ${genre?.name || ''} Games`;
 
 	return <h2>SHOWING: {heading}</h2>;
 };
