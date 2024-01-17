@@ -19,7 +19,7 @@ const GameAttributes = ({ game }: Props) => {
 						term='Metascore'
 						className='definition-item definition-item-score'
 					>
-						{game.metacritic}
+						{game.metacritic ? game.metacritic : 'N/A'}
 					</DefinitionItem>
 				</div>
 				<div className='game-attributes__right-side'>
