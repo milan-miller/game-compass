@@ -9,7 +9,7 @@ import { PacmanLoader } from 'react-spinners';
 const GamesGrid = () => {
 	const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
 
-	const skeletons = [1, 2, 3, 4, 5, 6];
+	const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 	if (error) return <p>{error.message}</p>;
 

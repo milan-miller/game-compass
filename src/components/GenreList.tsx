@@ -27,7 +27,9 @@ const GenreList = () => {
 							}}
 							onClick={() => setSelectedGenreId(genre.id)}
 						>
-							{genre.name.toUpperCase()}
+							{genre.name === 'Massively Multiplayer'
+								? 'MMO'
+								: genre.name.toUpperCase()}
 						</button>
 					</li>
 				))}

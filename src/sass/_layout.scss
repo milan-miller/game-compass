@@ -1,11 +1,16 @@
+.layout {
+	display: flex;
+}
+
 .genres-layout {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
 	color: var(--color-grey-1);
 	font-size: 2rem;
-	img {
-		width: 100px;
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 1.5rem;
 	}
 }
 
@@ -26,6 +31,18 @@
 	width: 100%;
 	color: var(--color-grey-1);
 	justify-content: center;
+
+	h2 {
+		font-size: 3rem;
+
+		@media only screen and (max-width: $bp-medium) {
+			font-size: 2rem;
+		}
+
+		@media only screen and (max-width: $bp-smallest) {
+			font-size: 1.35rem;
+		}
+	}
 }
 
 .selectors-layout {

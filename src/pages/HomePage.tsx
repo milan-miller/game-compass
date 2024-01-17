@@ -6,7 +6,7 @@ import SortSelector from '../components/SortSelector';
 
 const HomePage = () => {
 	return (
-		<div style={{ display: 'flex' }}>
+		<div className='layout'>
 			<GenreList />
 			<div className='main-layout'>
 				<div className='selections-layout'>
