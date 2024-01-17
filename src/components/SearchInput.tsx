@@ -21,6 +21,8 @@ const SearchInput = () => {
 						setSelectedPlatformId(undefined);
 						navigate('/');
 					}
+					ref.current.value = '';
+					ref.current.blur();
 				}
 			}}
 			className='search-input'
