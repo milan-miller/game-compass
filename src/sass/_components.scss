@@ -157,6 +157,7 @@
 	transition: 0.3s ease-in;
 	height: 45rem;
 	position: relative;
+	color: var(--color-grey-1);
 
 	&:hover {
 		transform: scale(1.04);
@@ -177,7 +178,6 @@
 	}
 
 	&__title {
-		color: var(--color-grey-1);
 		text-decoration: none;
 		text-align: center;
 		font-size: 1.5rem;
@@ -211,6 +211,7 @@
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
+	color: var(--color-grey-1);
 }
 
 // SortSelector

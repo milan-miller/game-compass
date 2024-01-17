@@ -10,21 +10,23 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
 	return (
-		<div className='gamecard'>
-			<img src={getCroppedImageUrl(game.background_image)} alt={game.name} />
+		<Link to={`/games/${game.slug}`}>
+			<div className='gamecard'>
+				<img src={getCroppedImageUrl(game.background_image)} alt={game.name} />
 
-			<div className='gamecard__info'>
-				{game.parent_platforms && (
-					<PlatformIconList
-						platforms={game.parent_platforms.map((p) => p.platform)}
-					/>
-				)}
+				<div className='gamecard__info'>
+					{game.parent_platforms && (
+						<PlatformIconList
+							platforms={game.parent_platforms.map((p) => p.platform)}
+						/>
+					)}
+				</div>
+				<CriticScore score={game.metacritic} />
+				<div className='gamecard__title'>
+					<h2>{game.name}</h2>
+				</div>
 			</div>
-			<CriticScore score={game.metacritic} />
-			<Link to={`/games/${game.slug}`} className='gamecard__title'>
-				<h2>{game.name}</h2>
-			</Link>
-		</div>
+		</Link>
 	);
 };
 
