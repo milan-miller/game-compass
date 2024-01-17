@@ -1,5 +1,4 @@
 import { Game } from '../entities/Game';
-import CriticScore from './CriticScore';
 import DefinitionItem from './DefinitionItem';
 
 interface Props {
@@ -20,7 +19,7 @@ const GameAttributes = ({ game }: Props) => {
 						term='Metascore'
 						className='definition-item definition-item-score'
 					>
-						<CriticScore score={game.metacritic} />
+						{game.metacritic}
 					</DefinitionItem>
 				</div>
 				<div className='game-attributes__right-side'>

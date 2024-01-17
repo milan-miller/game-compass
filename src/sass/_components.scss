@@ -156,6 +156,7 @@
 	width: 30rem;
 	transition: 0.3s ease-in;
 	height: 45rem;
+	position: relative;
 
 	&:hover {
 		transform: scale(1.04);
@@ -167,7 +168,6 @@
 
 	&__info {
 		display: flex;
-		justify-content: space-between;
 		padding: 10px;
 
 		&-icon {
@@ -208,10 +208,9 @@
 	border-radius: 10px;
 	padding: 0.7rem;
 	align-self: start;
-
-	@media only screen and (max-width: $bp-largest) {
-		font-size: 1.4rem;
-	}
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
 }
 
 // SortSelector

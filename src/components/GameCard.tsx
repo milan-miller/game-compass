@@ -12,16 +12,15 @@ const GameCard = ({ game }: Props) => {
 	return (
 		<div className='gamecard'>
 			<img src={getCroppedImageUrl(game.background_image)} alt={game.name} />
+
 			<div className='gamecard__info'>
-				<div>
-					{game.parent_platforms && (
-						<PlatformIconList
-							platforms={game.parent_platforms.map((p) => p.platform)}
-						/>
-					)}
-				</div>
-				<CriticScore score={game.metacritic} />
+				{game.parent_platforms && (
+					<PlatformIconList
+						platforms={game.parent_platforms.map((p) => p.platform)}
+					/>
+				)}
 			</div>
+			<CriticScore score={game.metacritic} />
 			<Link to={`/games/${game.slug}`} className='gamecard__title'>
 				<h2>{game.name}</h2>
 			</Link>
