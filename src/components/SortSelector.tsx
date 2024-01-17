@@ -14,7 +14,9 @@ const SortSelector = () => {
 
 	return (
 		<div className='sort-selector'>
-			<label htmlFor='sortOrder'>Order by: </label>
+			<label htmlFor='sortOrder'>
+				<span>Order by:</span>{' '}
+			</label>
 			<select id='sortOrder' onChange={(e) => setSortOrder(e.target.value)}>
 				{sortOrders.map((order) => (
 					<option key={order.value} value={order.value}>

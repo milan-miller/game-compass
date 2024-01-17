@@ -16,7 +16,9 @@ const GameDetailPage = () => {
 
 	return (
 		<div className='details-layout'>
-			<h2>{game.name}</h2>
+			<h2>
+				<span>{game.name}</span>
+			</h2>
 			<ExpandableText>{game.description_raw}</ExpandableText>
 			<GameAttributes game={game} />
 			<GameTrailer gameId={game.id} />

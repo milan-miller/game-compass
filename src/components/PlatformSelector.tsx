@@ -9,7 +9,9 @@ const PlatformSelector = () => {
 
 	return (
 		<div className='platform-selector'>
-			<label htmlFor='platform'>Platform: </label>
+			<label htmlFor='platform'>
+				<span>Platform:</span>{' '}
+			</label>
 			<select
 				id='platform'
 				onChange={(e) => {

@@ -13,7 +13,9 @@ const GenreList = () => {
 
 	return (
 		<div className='genres-layout'>
-			<h2>GENRES</h2>
+			<h2>
+				<span>GENRES</span>
+			</h2>
 			<ul>
 				{data?.results.map((genre) => (
 					<li key={genre.id} className='genres__list'>
